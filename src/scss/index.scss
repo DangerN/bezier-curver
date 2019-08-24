@@ -1,0 +1,47 @@
+@import 'variables', 'reset';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: map-get($colors, 'primary');
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "a header header b"
+    "graph graph instructions instructions"
+    "graph graph controls controls"
+    "output output output output";
+  grid-template-rows: 10% 15% 35% 40%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  grid-area: header;
+}
+
+.instructions {
+  grid-area: instructions;
+}
+
+.graph {
+  grid-area: graph;
+}
+
+.output {
+  grid-area: output;
+}
+
+.controls {
+  grid-area: controls;
+}
