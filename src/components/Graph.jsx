@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 
 const Graph = (props) => {
-  const { dispatch } = props
   const initialState = {
-    x1: 0,
-    x2: 0,
-    y1: 0,
-    y2: 0,
+    handleOne: {
+      x: 0,
+      y: 0
+    },
+    handleTwo: {
+      x: 70,
+      y: 70
+    },
     draggingPointId: null
   }
   const [ graphState, setGraphState ] = useState(initialState)
@@ -16,23 +19,41 @@ const Graph = (props) => {
   const handleMouseUp = (pointId) => {
     setGraphState({...graphState, draggingPointId: null})
   }
-  // const handleMouseMove = ({clientX, clientY}) => {
   const handleMouseMove = (event) => {
-    const {clientX, clientY} = event
-    const {top, left} =event.target.getBoundingClientRect()
     const { draggingPointId } = graphState
-    console.log('x:',clientX-left,'y:',clientY-top)
     if(!draggingPointId) {return}
+    const {clientX, clientY} = event
+    const svgRect = event.currentTarget.getBoundingClientRect()
+    const svgX = clientX - svgRect.left
+    const svgY = clientY - svgRect.top
+    const viewBoxX = svgX * 150 / svgRect.width;
+    const viewBoxY = svgY * 300 / svgRect.height;
+    setGraphState({...graphState, [draggingPointId]: {x: viewBoxX, y: viewBoxY}})
   }
+  const path = `
+    M 25, 200
+    C ${graphState.handleOne.x},${graphState.handleOne.y}
+      ${graphState.handleTwo.x},${graphState.handleTwo.y}
+      125,100
+  `
   return (
-    <svg className='graph' width='350' height='350'
+    <svg className='graph'
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width} height={props.height}
+      viewBox={`0 0 150 300`}
       onMouseMove={event=>{handleMouseMove(event)}}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}>
-      <rect x='25' y='25' height='300' width='300' fill='none' stroke='black' strokeWidth='5'/>
-      <circle cx='25' cy='325' r='10' fill='red'/>
-      <circle cx='325' cy='25' r='10' fill='red'/>
-      <circle cx={graphState.x1} cy={graphState.x2} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('x1')}}/>
+      <rect x='25' y='100' height='100' width='100' fill='none' stroke='black' strokeWidth='5'/>
+      <line x1={graphState.handleOne.x} y1={graphState.handleOne.y} x2='25' y2='200' stroke='black' strokeWidth='5'/>
+      <line x1={graphState.handleTwo.x} y1={graphState.handleTwo.y} x2='125' y2='100' stroke='black' strokeWidth='5'/>
+      <circle cx='25' cy='200' r='5' fill='red'/>
+      <circle cx='125' cy='100' r='5' fill='red'/>
+      <circle className='handle' cx={graphState.handleOne.x} cy={graphState.handleOne.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleOne')}}/>
+      <circle className='handle' cx={graphState.handleTwo.x} cy={graphState.handleTwo.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleTwo')}}/>
+      <path stroke='red' fill='none'
+        d={path}
+      />
     </svg>
   )
 }

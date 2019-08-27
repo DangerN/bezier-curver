@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Graph />
+      <Graph height='400' width='200'/>
       <Settings />
       <Instructions />
       <Output />
