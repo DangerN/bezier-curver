@@ -1,9 +1,9 @@
 import React from 'react'
+import useAppState from '../useAppState'
 
 const Instructions = () => {
   return (
     <div className='instructions'>
-      this insturhitonses laslm asfeif
     </div>
   )
 }

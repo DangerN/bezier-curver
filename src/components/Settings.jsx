@@ -1,7 +1,7 @@
 import React from 'react'
 import useAppState from '../useAppState'
 
-const Output = () => {
+const Settings = () => {
   const [state, dispatch] = useAppState()
   function thething() {
     console.log(state.ham);
@@ -10,10 +10,10 @@ const Output = () => {
     )
   }
   return (
-    <div className='output'>
-      { thething() }
+    <div className='controls'>
+     { thething() }
     </div>
   )
 }
 
-export default Output
+export default Settings

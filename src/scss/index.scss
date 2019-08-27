@@ -21,6 +21,8 @@ html, body, #root {
     "output output output output";
   grid-template-rows: 10% 15% 35% 40%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 }
 
 header {
