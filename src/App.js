@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <Header />
       <Graph dispatch={dispatch} height='400' width='200'/>
-      <Settings />
+      <Settings dispatch={dispatch}/>
       <Instructions {...appState}/>
-      <Output />
+      <Output {...appState}/>
     </div>
   );
 }

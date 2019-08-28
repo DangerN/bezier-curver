@@ -2,8 +2,8 @@ import { useReducer } from 'react'
 
 function useAppState() {
   const initialState = {
-    handleOne: {x: 0, y: 0},
-    handleTwo: {x: 0, y: 0}
+    handleOne: {x: 0.5, y: 0.5},
+    handleTwo: {x: 0.5, y: 0.5}
   }
   function scalePositions(positions) {
     return positions

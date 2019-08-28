@@ -121,3 +121,19 @@ header {
 
 .controls {
   grid-area: controls; }
+
+.box {
+  height: 30px;
+  width: 30px;
+  background: green;
+  animation-duration: 2s;
+  animation-name: boxAn;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative; }
+
+@keyframes boxAn {
+  0% {
+    left: 0px; }
+  100% {
+    left: 100px; } }
