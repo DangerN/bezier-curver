@@ -4,12 +4,14 @@ import Graph from './components/Graph'
 import Settings from './components/Settings'
 import Instructions from './components/Instructions'
 import Output from './components/Output'
+import useAppState from './useAppState'
 
 function App() {
+  const [appState, dispatch] = useAppState()
   return (
     <div className="App">
       <Header />
-      <Graph height='400' width='200'/>
+      <Graph dispatch={dispatch} height='400' width='200'/>
       <Settings />
       <Instructions />
       <Output />

@@ -1,5 +1,4 @@
 import React from 'react'
-import useAppState from '../useAppState'
 
 const Instructions = () => {
   return (

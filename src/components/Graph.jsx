@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Graph = (props) => {
+  const {height, width, dispatch} = props
   const initialState = {
     handleOne: {
-      x: 0,
-      y: 0
+      x: 40,
+      y: 40
     },
     handleTwo: {
       x: 70,
@@ -13,6 +14,17 @@ const Graph = (props) => {
     draggingPointId: null
   }
   const [ graphState, setGraphState ] = useState(initialState)
+  useEffect(() => {
+    dispatch({
+      type: 'updatePositions',
+      positions: {
+        x1: graphState.handleOne.x,
+        y1: graphState.handleOne.y,
+        x2: graphState.handleTwo.x,
+        y2: graphState.handleTwo.y
+      }
+    })
+  },[graphState.handleOne.x, graphState.handleOne.y, graphState.handleTwo.x, graphState.handleTwo.y])
   const handleMouseDown = (pointId) => {
     setGraphState({...graphState, draggingPointId: pointId})
   }
@@ -28,6 +40,8 @@ const Graph = (props) => {
     const svgY = clientY - svgRect.top
     const viewBoxX = svgX * 150 / svgRect.width;
     const viewBoxY = svgY * 300 / svgRect.height;
+    viewBoxX > 125 ? viewBoxX = 125 : viewBoxX
+    
     setGraphState({...graphState, [draggingPointId]: {x: viewBoxX, y: viewBoxY}})
   }
   const path = `
@@ -39,7 +53,7 @@ const Graph = (props) => {
   return (
     <svg className='graph'
       xmlns="http://www.w3.org/2000/svg"
-      width={props.width} height={props.height}
+      width={width} height={height}
       viewBox={`0 0 150 300`}
       onMouseMove={event=>{handleMouseMove(event)}}
       onMouseUp={handleMouseUp}
