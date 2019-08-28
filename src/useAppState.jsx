@@ -2,28 +2,26 @@ import { useReducer } from 'react'
 
 function useAppState() {
   const initialState = {
-    x1: null,
-    y1: null,
-    x2: null,
-    y2: null
+    handleOne: {x: 0, y: 0},
+    handleTwo: {x: 0, y: 0}
   }
   function scalePositions(positions) {
-    positions.x1 = (positions.x1 - 12.5)
-    positions.x2 = (positions.x2 - 12.5)
-    positions.y1 = (0 - positions.y1) - 100
-    positions.y2 = (positions.y2)
-    console.log(positions);
     return positions
   }
   function reducer(state, action) {
     switch (action.type) {
-      case 'updatePositions':
-        return {...state, ...scalePositions(action.positions)}
-      case 'boning':
-        return {...state, ham: 'moaning'}
-      case 'moaning':
-        return {...state, ham: 'boning'}
+      case 'handleOne':
+        return {...state, [action.type]: {
+          x: ((action.x-25)/100).toFixed(2),
+          y: ((-(action.y-200))/100).toFixed(2)
+        }}
+      case 'handleTwo':
+        return {...state, [action.type]: {
+          x: ((action.x-25)/100).toFixed(2),
+          y: ((-(action.y-200))/100).toFixed(2)
+        }}
       default:
+        console.log('wowee an error', action);
         throw new Error()
     }
   }

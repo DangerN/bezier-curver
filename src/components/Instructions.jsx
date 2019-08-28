@@ -1,13 +1,11 @@
 import React from 'react'
 
 const Instructions = (props) => {
-  const {x1, x2, y1, y2} = props
-  console.log(props);
+  const {handleOne, handleTwo} = props
   const controlCoordinates = () => {
-    
     return (
       <section>
-
+        {handleOne.x}  {handleOne.y}  {handleTwo.x}  {handleTwo.y} <br/>
       </section>
     )
   }
@@ -19,3 +17,10 @@ const Instructions = (props) => {
 }
 
 export default Instructions
+
+  Instructions.defaultProps = {
+    x1: 0,
+    y1: 0,
+    x2: 0,
+    y2: 0,
+  }

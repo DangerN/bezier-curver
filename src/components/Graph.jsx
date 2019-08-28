@@ -15,17 +15,17 @@ const Graph = (props) => {
     draggingPointId: null
   }
   const [ graphState, setGraphState ] = useState(initialState)
-  useEffect(() => {
-    dispatch({
-      type: 'updatePositions',
-      positions: {
-        x1: graphState.handleOne.x,
-        y1: graphState.handleOne.y,
-        x2: graphState.handleTwo.x,
-        y2: graphState.handleTwo.y
-      }
-    })
-  },[graphState.handleOne.x, graphState.handleOne.y, graphState.handleTwo.x, graphState.handleTwo.y])
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'updatePositions',
+  //     positions: {
+  //       x1: graphState.handleOne.x,
+  //       y1: graphState.handleOne.y,
+  //       x2: graphState.handleTwo.x,
+  //       y2: graphState.handleTwo.y
+  //     }
+  //   })
+  // },[graphState.handleOne.x, graphState.handleOne.y, graphState.handleTwo.x, graphState.handleTwo.y])
   const handleMouseDown = (pointId) => {
     setGraphState({...graphState, draggingPointId: pointId})
   }
@@ -41,7 +41,14 @@ const Graph = (props) => {
     const svgY = clientY - svgRect.top
     const viewBoxX = svgX * 150 / svgRect.width;
     const viewBoxY = svgY * 300 / svgRect.height;
-    setGraphState({...graphState, [draggingPointId]: {x: clamp(viewBoxX, 25, 125), y: viewBoxY}})
+    const xPosition = clamp(viewBoxX, 25, 125)
+    const yPosition = clamp(viewBoxY, 15, 285)
+    setGraphState({...graphState, [draggingPointId]: {x: xPosition, y: yPosition}})
+    dispatch({
+      type: draggingPointId,
+      x: xPosition,
+      y: yPosition
+    })
   }
   const path = `
     M 25, 200
