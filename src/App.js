@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Graph dispatch={dispatch} height='400' width='200'/>
       <Settings />
-      <Instructions />
+      <Instructions {...appState}/>
       <Output />
     </div>
   );

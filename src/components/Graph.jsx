@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import clamp from 'lodash.clamp'
 
 const Graph = (props) => {
   const {height, width, dispatch} = props
   const initialState = {
     handleOne: {
-      x: 40,
-      y: 40
+      x: 50,
+      y: 150
     },
     handleTwo: {
       x: 70,
@@ -40,9 +41,7 @@ const Graph = (props) => {
     const svgY = clientY - svgRect.top
     const viewBoxX = svgX * 150 / svgRect.width;
     const viewBoxY = svgY * 300 / svgRect.height;
-    viewBoxX > 125 ? viewBoxX = 125 : viewBoxX
-    
-    setGraphState({...graphState, [draggingPointId]: {x: viewBoxX, y: viewBoxY}})
+    setGraphState({...graphState, [draggingPointId]: {x: clamp(viewBoxX, 25, 125), y: viewBoxY}})
   }
   const path = `
     M 25, 200
