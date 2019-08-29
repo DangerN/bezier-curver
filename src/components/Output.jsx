@@ -1,9 +1,9 @@
 import React, { useState, useEffect} from 'react'
 
 const Output = props => {
-  const {handleOne, handleTwo} = props
+  const {handleOne, handleTwo, multiplier} = props
   const animation = {
-    animationTimingFunction: `cubic-bezier(${handleOne.x}, ${handleOne.y}, ${handleTwo.x}, ${handleTwo.y})`,
+    animationTimingFunction: `cubic-bezier(${handleOne.x}, ${handleOne.y*multiplier}, ${handleTwo.x}, ${handleTwo.y*multiplier})`,
   }
   return (
     <div className='output'>

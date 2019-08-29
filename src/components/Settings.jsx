@@ -18,8 +18,8 @@ const Settings = props => {
   }
   const multiplierButtons = () => {
     const handleMultiplierClick = event => {
-      let yeet = parseInt(/(\d)x/.exec(event.target.value)[1])
-      console.log(yeet);
+      let newMultiplier = parseInt(/(\d)x/.exec(event.target.value)[1])
+      dispatch({type: 'changeMultiplier', multiplier: newMultiplier})
     }
     return (
       <div className='multiplierButtons'>

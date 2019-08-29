@@ -2,8 +2,8 @@ import { useReducer } from 'react'
 
 function useAppState() {
   const initialState = {
-    handleOne: {x: 0.5, y: 0.5},
-    handleTwo: {x: 0.5, y: 0.5},
+    handleOne: {x: 0.25, y: 0.25},
+    handleTwo: {x: 0.75, y: 0.75},
     multiplier: 1,
     animationSpeed: 2,
   }
@@ -15,13 +15,15 @@ function useAppState() {
       case 'handleOne':
         return {...state, [action.type]: {
           x: ((action.x-25)/100).toFixed(2),
-          y: ((-(action.y-275))/100).toFixed(2)
+          y: ((-(action.y-275))/100).toFixed(2)*state.multiplier
         }}
       case 'handleTwo':
         return {...state, [action.type]: {
           x: ((action.x-25)/100).toFixed(2),
-          y: ((-(action.y-275))/100).toFixed(2)
+          y: ((-(action.y-275))/100).toFixed(2)*state.multiplier
         }}
+      case 'changeMultiplier':
+        return {...state, multiplier: action.multiplier}
       default:
         console.log('wowee an error', action);
         throw new Error()

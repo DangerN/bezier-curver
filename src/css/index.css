@@ -100,7 +100,7 @@ html, body, #root {
   display: grid;
   grid-template-areas: "graph header b" "graph instructions instructions" "graph controls controls" "graph output output";
   grid-template-rows: 10% 15% 35% 40%;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 0.8fr 1fr 1fr;
   align-items: center;
   justify-items: center; }
 
@@ -114,7 +114,8 @@ header {
   grid-area: instructions; }
 
 .graph {
-  grid-area: graph; }
+  grid-area: graph;
+  height: 100%; }
 
 .output {
   grid-area: output; }

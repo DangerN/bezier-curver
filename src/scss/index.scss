@@ -20,7 +20,7 @@ html, body, #root {
     "graph controls controls"
     "graph output output";
   grid-template-rows: 10% 15% 35% 40%;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 0.8fr 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
@@ -38,6 +38,7 @@ header {
 
 .graph {
   grid-area: graph;
+  height: 100%;
 }
 
 .output {
