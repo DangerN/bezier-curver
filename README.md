@@ -1,3 +1,3 @@
-#Bezier Curver
+# Bezier Curverator
 
-This app is meant to help visualize the effects of different bezier curves used for styling.
+This app is meant to help visualize the `cubic-bezier()` animation timing function.
