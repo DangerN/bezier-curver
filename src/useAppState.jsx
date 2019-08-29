@@ -3,7 +3,9 @@ import { useReducer } from 'react'
 function useAppState() {
   const initialState = {
     handleOne: {x: 0.5, y: 0.5},
-    handleTwo: {x: 0.5, y: 0.5}
+    handleTwo: {x: 0.5, y: 0.5},
+    multiplier: 1,
+    animationSpeed: 2,
   }
   function scalePositions(positions) {
     return positions
@@ -13,12 +15,12 @@ function useAppState() {
       case 'handleOne':
         return {...state, [action.type]: {
           x: ((action.x-25)/100).toFixed(2),
-          y: ((-(action.y-200))/100).toFixed(2)
+          y: ((-(action.y-275))/100).toFixed(2)
         }}
       case 'handleTwo':
         return {...state, [action.type]: {
           x: ((action.x-25)/100).toFixed(2),
-          y: ((-(action.y-200))/100).toFixed(2)
+          y: ((-(action.y-275))/100).toFixed(2)
         }}
       default:
         console.log('wowee an error', action);

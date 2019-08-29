@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Instructions = (props) => {
-  const {handleOne, handleTwo} = props
+  const {handleOne, handleTwo, multiplier} = props
   const controlCoordinates = () => {
     return (
       <section>

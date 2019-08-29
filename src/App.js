@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Graph dispatch={dispatch} height='400' width='200'/>
+      <Graph dispatch={dispatch} multiplier={appState.multiplier}/>
       <Settings dispatch={dispatch}/>
       <Instructions {...appState}/>
       <Output {...appState}/>

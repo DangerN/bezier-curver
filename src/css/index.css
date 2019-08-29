@@ -98,9 +98,9 @@ html, body, #root {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-areas: "a header header b" "graph graph instructions instructions" "graph graph controls controls" "output output output output";
+  grid-template-areas: "graph header b" "graph instructions instructions" "graph controls controls" "graph output output";
   grid-template-rows: 10% 15% 35% 40%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
   align-items: center;
   justify-items: center; }
 
@@ -131,6 +131,18 @@ header {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative; }
+
+#circle {
+  animation-duration: 2s;
+  animation-name: circleResize;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+@keyframes circleResize {
+  0% {
+    height: 20px; }
+  100% {
+    height: 40px; } }
 
 @keyframes boxAn {
   0% {
