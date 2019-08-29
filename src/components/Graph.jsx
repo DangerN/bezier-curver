@@ -3,7 +3,6 @@ import clamp from 'lodash.clamp'
 
 const Graph = (props) => {
   const {dispatch, multiplier, handleOne, handleTwo} = props
-  console.log(multiplier);
   const initialState = {
     handleOne: {
       x: handleOne.x*100+25,
@@ -40,12 +39,22 @@ const Graph = (props) => {
       y: yPosition
     })
   }
-  const path = `
-    M 25, 275
-    C ${graphState.handleOne.x},${graphState.handleOne.y*multiplier}
-      ${graphState.handleTwo.x},${graphState.handleTwo.y*multiplier}
-      125,175
-  `
+  const path = () =>
+  {
+    console.log(graphState.handleOne.y*multiplier, graphState.handleTwo.y*multiplier);
+    return (`
+      M 25, 275
+      C ${graphState.handleOne.x},${graphState.handleOne.y*multiplier}
+        ${graphState.handleTwo.x},${graphState.handleTwo.y*multiplier}
+        125,175
+    `)
+  }
+  // const path = `
+  //   M 25, 275
+  //   C ${graphState.handleOne.x},${graphState.handleOne.y*multiplier}
+  //     ${graphState.handleTwo.x},${graphState.handleTwo.y*multiplier}
+  //     125,175
+  // `
   return (
     <svg className='graph'
       xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +68,7 @@ const Graph = (props) => {
       <circle cx='25' cy='275' r='5' fill='red'/>
       <circle cx='125' cy='175' r='5' fill='red'/>
       <path stroke='red' fill='none'
-      d={path}
+      d={path()}
       />
       <circle className='handle' cx={graphState.handleOne.x} cy={graphState.handleOne.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleOne')}}/>
       <circle className='handle' cx={graphState.handleTwo.x} cy={graphState.handleTwo.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleTwo')}}/>
