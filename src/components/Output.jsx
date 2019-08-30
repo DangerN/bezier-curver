@@ -1,8 +1,11 @@
 import React, { useState, useEffect} from 'react'
 
 const Output = props => {
-  const {handleOne, handleTwo, multiplier} = props
+  const {handleOne, handleTwo, multiplier, animationSpeed} = props
+  console.log(animationSpeed);
   const animation = {
+    // animationDuration: 2s,
+    animationDuration: `${animationSpeed}s`,
     animationTimingFunction: `cubic-bezier(${handleOne.x}, ${handleOne.y*multiplier}, ${handleTwo.x}, ${handleTwo.y*multiplier})`,
   }
   return (

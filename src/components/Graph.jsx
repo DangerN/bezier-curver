@@ -44,8 +44,8 @@ const Graph = (props) => {
     console.log(graphState.handleOne.y*multiplier, graphState.handleTwo.y*multiplier);
     return (`
       M 25, 275
-      C ${graphState.handleOne.x},${graphState.handleOne.y*multiplier}
-        ${graphState.handleTwo.x},${graphState.handleTwo.y*multiplier}
+      C ${graphState.handleOne.x},${graphState.handleOne.y}
+        ${graphState.handleTwo.x},${graphState.handleTwo.y}
         125,175
     `)
   }

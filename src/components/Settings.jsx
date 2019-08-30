@@ -1,18 +1,24 @@
 import React from 'react'
 
 const Settings = props => {
-  const {dispatch, multiplier} = props
+  const {dispatch, multiplier, animationSpeed} = props
   const behaviorButtons = () => {
     return (
       <div className='behaviorButtons'>
-        <input type='button' value=''></input>
+        <input type='button' value='Auto' disabled></input>
+        <input type='button' value='Manual' disabled></input>
       </div>
     )
   }
   const speedSlider = () => {
+    const handleSliderChange = event => {
+      dispatch({type: 'changeAnimationSpeed', speed: parseFloat(event.target.value)})
+    }
+    console.log(animationSpeed);
     return (
       <div className='speedSlider'>
-        <input type='range' min='0.5' max='12' step='0.25'></input>
+        <input onChange={handleSliderChange} value={animationSpeed} type='range' min='0.25' max='12' step='0.25'></input>
+        <div>{animationSpeed}</div>
       </div>
     )
   }

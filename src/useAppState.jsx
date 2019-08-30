@@ -6,6 +6,7 @@ function useAppState() {
     handleTwo: {x: 0.75, y: 0.75},
     multiplier: 1,
     animationSpeed: 2,
+    autoPlay: true
   }
   function scalePositions(positions) {
     return positions
@@ -24,6 +25,8 @@ function useAppState() {
         }}
       case 'changeMultiplier':
         return {...state, multiplier: action.multiplier}
+      case 'changeAnimationSpeed':
+        return {...state, animationSpeed: action.speed}
       default:
         console.log('wowee an error', action);
         throw new Error()

@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <Graph dispatch={dispatch} multiplier={appState.multiplier}/>
-      <Settings dispatch={dispatch}/>
+      <Settings dispatch={dispatch} {...appState}/>
       <Instructions {...appState}/>
       <Output {...appState}/>
     </div>
