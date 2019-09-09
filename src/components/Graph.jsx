@@ -41,7 +41,6 @@ const Graph = (props) => {
   }
   const path = () =>
   {
-    console.log(graphState.handleOne.y*multiplier, graphState.handleTwo.y*multiplier);
     return (`
       M 25, 275
       C ${graphState.handleOne.x},${graphState.handleOne.y}
@@ -49,12 +48,6 @@ const Graph = (props) => {
         125,175
     `)
   }
-  // const path = `
-  //   M 25, 275
-  //   C ${graphState.handleOne.x},${graphState.handleOne.y*multiplier}
-  //     ${graphState.handleTwo.x},${graphState.handleTwo.y*multiplier}
-  //     125,175
-  // `
   return (
     <svg className='graph'
       xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,6 @@ const Settings = props => {
     const handleSliderChange = event => {
       dispatch({type: 'changeAnimationSpeed', speed: parseFloat(event.target.value)})
     }
-    console.log(animationSpeed);
     return (
       <div className='speedSlider'>
         <input onChange={handleSliderChange} value={animationSpeed} type='range' min='0.25' max='12' step='0.25'></input>
@@ -29,9 +28,9 @@ const Settings = props => {
     }
     return (
       <div className='multiplierButtons'>
-        <input type='button' value='1x' onClick={handleMultiplierClick}/>
-        <input type='button' value='2x' onClick={handleMultiplierClick}/>
-        <input type='button'value='5x' onClick={handleMultiplierClick}/>
+        <input type='button' value='1x' disabled onClick={handleMultiplierClick}/>
+        <input type='button' value='2x' disabled onClick={handleMultiplierClick}/>
+        <input type='button'value='5x' disabled onClick={handleMultiplierClick}/>
       </div>
     )
   }

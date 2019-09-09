@@ -5,7 +5,7 @@ const Instructions = (props) => {
   const controlCoordinates = () => {
     return (
       <section>
-        {handleOne.x}  {handleOne.y}  {handleTwo.x}  {handleTwo.y} <br/>
+        cubic-bezier({handleOne.x},  {handleOne.y*multiplier},  {handleTwo.x},  {handleTwo.y*multiplier}) <br/>
       </section>
     )
   }

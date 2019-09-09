@@ -118,7 +118,13 @@ header {
   height: 100%; }
 
 .output {
-  grid-area: output; }
+  grid-area: output;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center; }
 
 .controls {
   grid-area: controls; }
@@ -137,6 +143,19 @@ header {
   animation-name: circleResize;
   animation-iteration-count: infinite;
   animation-direction: alternate; }
+
+#cross {
+  height: 30px;
+  width: 30px;
+  animation-name: crossSpin;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+@keyframes crossSpin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 
 @keyframes circleResize {
   0% {
