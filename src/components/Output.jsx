@@ -26,6 +26,9 @@ const Output = props => {
         <line fill='green' stroke='purple' strokeWidth='4' x1='0' y1='5' x2='10' y2='5' />
         <line fill='green' stroke='purple' strokeWidth='4' x1='5' y1='0' x2='5' y2='10' />
       </svg>
+      <div
+        id='ghostBox'
+        style={animation}/>
     </div>
   )
 }
