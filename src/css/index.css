@@ -86,39 +86,6 @@ hr {
 input, select {
   vertical-align: middle; }
 
-* {
-  box-sizing: border-box; }
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  background: #F6E8EA; }
-
-.App {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-areas: "graph header b" "graph instructions instructions" "graph controls controls" "graph output output";
-  grid-template-rows: 10% 15% 35% 40%;
-  grid-template-columns: 0.8fr 1fr 1fr;
-  align-items: center;
-  justify-items: center; }
-
-header {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  grid-area: header; }
-
-.instructions {
-  grid-area: instructions;
-  display: flex;
-  flex-flow: column; }
-
-.graph {
-  grid-area: graph;
-  height: 100%; }
-
 .output {
   grid-area: output;
   height: 100%;
@@ -127,9 +94,6 @@ header {
   flex-flow: row;
   justify-content: space-around;
   align-items: center; }
-
-.controls {
-  grid-area: controls; }
 
 .box {
   height: 30px;
@@ -140,12 +104,6 @@ header {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative; }
-
-.handle {
-  cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab; }
 
 #circle {
   animation-name: circleResize;
@@ -190,3 +148,45 @@ header {
     left: 0px; }
   100% {
     left: 100px; } }
+
+* {
+  box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: #F6E8EA; }
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "graph header b" "graph instructions instructions" "graph controls controls" "graph output output";
+  grid-template-rows: 10% 15% 35% 40%;
+  grid-template-columns: 0.8fr 1fr 1fr;
+  align-items: center;
+  justify-items: center; }
+
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  grid-area: header; }
+
+.instructions {
+  grid-area: instructions;
+  display: flex;
+  flex-flow: column; }
+
+.graph {
+  grid-area: graph;
+  height: 100%; }
+
+.controls {
+  grid-area: controls; }
+
+.handle {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab; }

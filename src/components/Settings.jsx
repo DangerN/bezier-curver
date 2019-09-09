@@ -16,8 +16,8 @@ const Settings = props => {
     }
     return (
       <div className='speedSlider'>
-        <input onChange={handleSliderChange} value={animationSpeed} type='range' min='0.25' max='12' step='0.25'></input>
-        <div>{animationSpeed}</div>
+        <div>Speed: {animationSpeed}s</div>
+        <input onChange={handleSliderChange} value={animationSpeed} type='range' min='0.25' max='8' step='0.25'></input>
       </div>
     )
   }
