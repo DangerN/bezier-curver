@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bezier-curver/precache-manifest.b155048cb56b3d7b46b9820a8f465c57.js"
+  "/bezier-curver/precache-manifest.0dd3813e586e3d8c7a89d76f4f2d4cff.js"
 );
 
 self.addEventListener('message', (event) => {
