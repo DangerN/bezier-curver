@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import clamp from 'lodash.clamp'
 
 const Graph = (props) => {
-  const {dispatch, multiplier, handleOne, handleTwo} = props
+  const {dispatch, handleOne, handleTwo} = props
   const initialState = {
     handleOne: {
       x: handleOne.x*100+25,
@@ -74,5 +74,4 @@ export default Graph
 Graph.defaultProps = {
   handleOne: {x: 0.25, y: 0.25},
   handleTwo: {x: 0.75, y: 0.75},
-  multiplier: 1,
 }

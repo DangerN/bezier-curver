@@ -1,7 +1,6 @@
 @import "variables";
 
 #pog {
-  // background-color: blue;
   background-color: map-get($colors, 'primary');
   border-radius: 50em;
   transition: all 1s ease;

@@ -1,10 +1,10 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 
 const Output = props => {
-  const {handleOne, handleTwo, multiplier, animationSpeed} = props
+  const {handleOne, handleTwo, animationSpeed} = props
   const animation = {
     animationDuration: `${animationSpeed}s`,
-    animationTimingFunction: `cubic-bezier(${handleOne.x}, ${handleOne.y*multiplier}, ${handleTwo.x}, ${handleTwo.y*multiplier})`,
+    animationTimingFunction: `cubic-bezier(${handleOne.x}, ${handleOne.y}, ${handleTwo.x}, ${handleTwo.y})`,
   }
   return (
     <div className='output'>

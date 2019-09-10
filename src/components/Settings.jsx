@@ -1,15 +1,7 @@
 import React from 'react'
 
 const Settings = props => {
-  const {dispatch, multiplier, animationSpeed} = props
-  const behaviorButtons = () => {
-    return (
-      <div className='behaviorButtons' style={{display: 'none'}}>
-        <input type='button' value='Auto' disabled></input>
-        <input type='button' value='Manual' disabled></input>
-      </div>
-    )
-  }
+  const {dispatch, animationSpeed} = props
   const speedSlider = () => {
     const handleSliderChange = event => {
       dispatch({type: 'changeAnimationSpeed', speed: parseFloat(event.target.value)})
@@ -21,24 +13,9 @@ const Settings = props => {
       </div>
     )
   }
-  const multiplierButtons = () => {
-    const handleMultiplierClick = event => {
-      let newMultiplier = parseInt(/(\d)x/.exec(event.target.value)[1])
-      dispatch({type: 'changeMultiplier', multiplier: newMultiplier})
-    }
-    return (
-      <div style={{display: 'none'}} className='multiplierButtons'>
-        <input type='button' value='1x' disabled onClick={handleMultiplierClick}/>
-        <input type='button' value='2x' disabled onClick={handleMultiplierClick}/>
-        <input type='button'value='5x' disabled onClick={handleMultiplierClick}/>
-      </div>
-    )
-  }
   return (
     <div className='controls'>
       {speedSlider()}
-      {behaviorButtons()}
-      {multiplierButtons()}
     </div>
   )
 }

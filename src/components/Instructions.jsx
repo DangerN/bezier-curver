@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Instructions = (props) => {
-  const {handleOne, handleTwo, multiplier} = props
+  const {handleOne, handleTwo} = props
   const controlCoordinates = () => {
     return (
       <section style={{alignSelf: 'center'}}>
-        cubic-bezier({handleOne.x},  {handleOne.y*multiplier},  {handleTwo.x},  {handleTwo.y*multiplier}) <br/>
+        cubic-bezier({handleOne.x},  {handleOne.y},  {handleTwo.x},  {handleTwo.y}) <br/>
         <p style={{color: 'grey'}}>prototype: cubic-bezier(x1, y1, x2, y2)</p>
       </section>
     )
