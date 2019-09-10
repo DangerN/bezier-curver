@@ -1,5 +1,3 @@
-@import 'variables';
-
 .output {
   grid-area: output;
   height: 100%;
@@ -7,82 +5,64 @@
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  align-items: center;
-}
+  align-items: center; }
 
 .box {
   height: 30px;
   width: 30px;
-  background-color: map-get($colors, 'accent');
+  background-color: #FF9042;
   animation-duration: 2s;
   animation-name: boxAn;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  position: relative;
-}
+  position: relative; }
 
 @keyframes boxAn {
   0% {
-    left: 0px;
-  }
+    left: 0px; }
   100% {
-    left: 100px;
-  }
-}
+    left: 100px; } }
 
 #circle {
   animation-name: circleResize;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
-  > circle {
-    fill: map-get($colors, 'secondary');
-    stroke: map-get($colors, 'accent');
-  }
-}
+  animation-direction: alternate; }
+  #circle > circle {
+    fill: #CFF27E;
+    stroke: #FF9042; }
 
 @keyframes circleResize {
   0% {
-    height: 20px;
-  }
+    height: 20px; }
   100% {
-    height: 40px;
-  }
-}
+    height: 40px; } }
 
 #cross {
   height: 30px;
   width: 30px;
   animation-name: crossSpin;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
+  animation-direction: alternate; }
 
 @keyframes crossSpin {
   0% {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   100% {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 
 #ghostBox {
   height: 30px;
   width: 30px;
-  background: map-get($colors, 'accent');
+  background: #FF9042;
   animation-name: ghostBox;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
+  animation-direction: alternate; }
 
 @keyframes ghostBox {
   0% {
-    opacity: 0.2;
-  }
+    opacity: 0.2; }
   100% {
-    opacity: 0.7;
-  }
-}
+    opacity: 0.7; } }
 
 #colorBox {
   height: 30px;
@@ -90,14 +70,10 @@
   animation-name: colorBox;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-color: map-get($colors, 'accent');
-}
+  background-color: #FF9042; }
 
 @keyframes colorBox {
   0% {
-    background-color: map-get($colors, 'accent');
-  }
+    background-color: #FF9042; }
   100% {
-    background-color: map-get($colors, 'shadow');
-  }
-}
+    background-color: #330036; } }

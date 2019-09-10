@@ -5,6 +5,7 @@ Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -98,17 +99,32 @@ input, select {
 .box {
   height: 30px;
   width: 30px;
-  background: green;
+  background-color: #FF9042;
   animation-duration: 2s;
   animation-name: boxAn;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   position: relative; }
 
+@keyframes boxAn {
+  0% {
+    left: 0px; }
+  100% {
+    left: 100px; } }
+
 #circle {
   animation-name: circleResize;
   animation-iteration-count: infinite;
   animation-direction: alternate; }
+  #circle > circle {
+    fill: #CFF27E;
+    stroke: #FF9042; }
+
+@keyframes circleResize {
+  0% {
+    height: 20px; }
+  100% {
+    height: 40px; } }
 
 #cross {
   height: 30px;
@@ -117,10 +133,16 @@ input, select {
   animation-iteration-count: infinite;
   animation-direction: alternate; }
 
+@keyframes crossSpin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 #ghostBox {
   height: 30px;
   width: 30px;
-  background: red;
+  background: #FF9042;
   animation-name: ghostBox;
   animation-iteration-count: infinite;
   animation-direction: alternate; }
@@ -131,23 +153,106 @@ input, select {
   100% {
     opacity: 0.7; } }
 
-@keyframes crossSpin {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
+#colorBox {
+  height: 30px;
+  width: 30px;
+  animation-name: colorBox;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  background-color: #FF9042; }
 
-@keyframes circleResize {
+@keyframes colorBox {
   0% {
-    height: 20px; }
+    background-color: #FF9042; }
   100% {
-    height: 40px; } }
+    background-color: #330036; } }
 
-@keyframes boxAn {
+#pog {
+  background-color: #F6E8EA;
+  border-radius: 50em;
+  transition: all 1s ease;
+  height: 1em;
+  width: 1em;
+  top: 1em;
+  left: 2em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50; }
+
+#infocon {
+  font-size: 1em;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  animation: infoconClosing 0.5s forwards; }
+
+#meme {
+  height: 0;
+  width: 0;
+  animation: memeClosing 0.5s forwards;
+  opacity: 0;
+  border-radius: 1em; }
+
+.infoClosed {
+  transition: all 0.5s ease; }
+  .infoClosed > #pog {
+    animation: pogClosing 0.5s forwards; }
+
+.infoOpen > #pog {
+  animation: pogOpening 0.5s forwards; }
+  .infoOpen > #pog > #infocon {
+    animation: infoconOpening 0.5s forwards; }
+  .infoOpen > #pog > #meme {
+    animation: memeOpening 0.5s forwards; }
+
+@keyframes infoconClosing {
   0% {
-    left: 0px; }
+    left: -20vw; }
   100% {
-    left: 100px; } }
+    left: 0vw; } }
+
+@keyframes infoconOpening {
+  0% {
+    left: 0vw; }
+  100% {
+    left: -20vw; } }
+
+@keyframes memeOpening {
+  0% { }
+  80% {
+    height: 696px;
+    width: 500px;
+    opacity: 0; }
+  100% {
+    height: 696px;
+    width: 500px;
+    opacity: 1; } }
+
+@keyframes pogOpening {
+  0% { }
+  100% {
+    top: 0;
+    left: 0;
+    background-color: #F6E8EA;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0; } }
+
+@keyframes pogClosing {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: #F6E8EA;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0; }
+  100% {
+    height: 1em;
+    width: 1em;
+    top: 1em;
+    left: 2em; } }
 
 * {
   box-sizing: border-box; }
@@ -155,14 +260,16 @@ input, select {
 html, body, #root {
   height: 100%;
   width: 100%;
-  background: #F6E8EA; }
+  background: #F6E8EA;
+  font-family: 'Roboto', sans-serif;
+  color: #330036; }
 
 .App {
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-areas: "graph header b" "graph instructions instructions" "graph controls controls" "graph output output";
-  grid-template-rows: 10% 15% 35% 40%;
+  grid-template-rows: 10% 35% 15% 40%;
   grid-template-columns: 0.8fr 1fr 1fr;
   align-items: center;
   justify-items: center; }
@@ -171,21 +278,39 @@ header {
   display: flex;
   flex-flow: row;
   justify-content: center;
-  grid-area: header; }
+  grid-area: header;
+  font-size: 2em; }
 
 .instructions {
+  padding-right: 2em;
   grid-area: instructions;
   display: flex;
   flex-flow: column; }
+  .instructions > * {
+    margin: 1em; }
 
 .graph {
   grid-area: graph;
   height: 100%; }
 
+.anchor {
+  fill: #FF9042; }
+
+.graphBody {
+  stroke: #330036; }
+
+.curveLine {
+  fill: #CFF27E;
+  stroke: #FF9042;
+  stroke-width: 2; }
+
 .controls {
   grid-area: controls; }
 
 .handle {
+  fill: #CFF27E;
+  stroke: #FF9042;
+  stroke-width: 2;
   cursor: move;
   cursor: grab;
   cursor: -moz-grab;

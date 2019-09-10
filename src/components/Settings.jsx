@@ -4,7 +4,7 @@ const Settings = props => {
   const {dispatch, multiplier, animationSpeed} = props
   const behaviorButtons = () => {
     return (
-      <div className='behaviorButtons'>
+      <div className='behaviorButtons' style={{display: 'none'}}>
         <input type='button' value='Auto' disabled></input>
         <input type='button' value='Manual' disabled></input>
       </div>
@@ -27,7 +27,7 @@ const Settings = props => {
       dispatch({type: 'changeMultiplier', multiplier: newMultiplier})
     }
     return (
-      <div className='multiplierButtons'>
+      <div style={{display: 'none'}} className='multiplierButtons'>
         <input type='button' value='1x' disabled onClick={handleMultiplierClick}/>
         <input type='button' value='2x' disabled onClick={handleMultiplierClick}/>
         <input type='button'value='5x' disabled onClick={handleMultiplierClick}/>

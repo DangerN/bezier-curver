@@ -10,7 +10,7 @@ function App() {
   const [appState, dispatch] = useAppState()
   return (
     <div className="App">
-      <Header />
+      <Header infoOpen={appState.infoOpen} dispatch={dispatch}/>
       <Graph dispatch={dispatch} multiplier={appState.multiplier}/>
       <Settings dispatch={dispatch} {...appState}/>
       <Instructions {...appState}/>

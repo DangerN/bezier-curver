@@ -1,0 +1,118 @@
+@import "variables";
+
+#pog {
+  // background-color: blue;
+  background-color: map-get($colors, 'primary');
+  border-radius: 50em;
+  transition: all 1s ease;
+  height: 1em;
+  width: 1em;
+  top: 1em;
+  left: 2em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+#infocon {
+  font-size: 1em;
+  transition: all $infoTiming ease;
+  cursor: pointer;
+  position: relative;
+  animation: infoconClosing $infoTiming forwards;
+}
+
+#meme {
+  height: 0;
+  width: 0;
+  animation: memeClosing $infoTiming forwards;
+  opacity: 0;
+  border-radius: 1em;
+}
+
+.infoClosed {
+  transition: all $infoTiming ease;
+  > #pog {
+    animation: pogClosing $infoTiming forwards;
+  }
+  > #pog:hover {
+  }
+}
+
+.infoOpen {
+  > #pog {
+    animation: pogOpening $infoTiming forwards;
+    > #infocon {
+      animation: infoconOpening $infoTiming forwards;
+    }
+    > #meme {
+      animation: memeOpening $infoTiming forwards;
+    }
+  }
+}
+
+@keyframes infoconClosing {
+  0% {
+    left: -20vw;
+  }
+  100% {
+    left: 0vw;
+  }
+}
+
+@keyframes infoconOpening {
+  0% {
+    left: 0vw;
+  }
+  100% {
+    left: -20vw;
+  }
+}
+
+@keyframes memeOpening {
+  0% {
+
+  }
+  80% {
+    height: 696px;
+    width: 500px;
+    opacity: 0;
+  }
+  100% {
+    height: 696px;
+    width: 500px;
+    opacity: 1;
+  }
+}
+
+@keyframes pogOpening {
+  0% {
+  }
+  100% {
+    top: 0;
+    left: 0;
+    background-color: map-get($colors, 'primary');
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+@keyframes pogClosing {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: map-get($colors, 'primary');
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+  100% {
+    height: 1em;
+    width: 1em;
+    top: 1em;
+    left: 2em;
+  }
+}

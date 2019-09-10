@@ -55,14 +55,14 @@ const Graph = (props) => {
       onMouseMove={event=>{handleMouseMove(event)}}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}>
-      <rect x='25' y='175' height='100' width='100' fill='none' stroke='black' strokeWidth='2'/>
-      <line x1={graphState.handleOne.x} y1={graphState.handleOne.y} x2='25' y2='275' stroke='black' strokeWidth='2'/>
-      <line x1={graphState.handleTwo.x} y1={graphState.handleTwo.y} x2='125' y2='175' stroke='black' strokeWidth='2'/>
-      <circle cx='25' cy='275' r='5' fill='red'/>
-      <circle cx='125' cy='175' r='5' fill='red'/>
-      <path stroke='red' fill='none'
+      <rect className='graphBody' x='25' y='175' height='100' width='100' fill='none' stroke='black' strokeWidth='2'/>
+      <line className='graphBody' x1={graphState.handleOne.x} y1={graphState.handleOne.y} x2='25' y2='275' stroke='black' strokeWidth='2'/>
+      <line className='graphBody' x1={graphState.handleTwo.x} y1={graphState.handleTwo.y} x2='125' y2='175' stroke='black' strokeWidth='2'/>
+      <path className='curveLine' stroke='red' fill='none'
       d={path()}
       />
+      <circle className='anchor' cx='25' cy='275' r='5' fill='red'/>
+      <circle className='anchor' cx='125' cy='175' r='5' fill='red'/>
       <circle className='handle' cx={graphState.handleOne.x} cy={graphState.handleOne.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleOne')}}/>
       <circle className='handle' cx={graphState.handleTwo.x} cy={graphState.handleTwo.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleTwo')}}/>
     </svg>

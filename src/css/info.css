@@ -1,0 +1,86 @@
+#pog {
+  background-color: #F6E8EA;
+  border-radius: 50em;
+  transition: all 1s ease;
+  height: 1em;
+  width: 1em;
+  top: 1em;
+  left: 2em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50; }
+
+#infocon {
+  font-size: 1em;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  animation: infoconClosing 0.5s forwards; }
+
+#meme {
+  height: 0;
+  width: 0;
+  animation: memeClosing 0.5s forwards;
+  opacity: 0;
+  border-radius: 1em; }
+
+.infoClosed {
+  transition: all 0.5s ease; }
+  .infoClosed > #pog {
+    animation: pogClosing 0.5s forwards; }
+
+.infoOpen > #pog {
+  animation: pogOpening 0.5s forwards; }
+  .infoOpen > #pog > #infocon {
+    animation: infoconOpening 0.5s forwards; }
+  .infoOpen > #pog > #meme {
+    animation: memeOpening 0.5s forwards; }
+
+@keyframes infoconClosing {
+  0% {
+    left: -20vw; }
+  100% {
+    left: 0vw; } }
+
+@keyframes infoconOpening {
+  0% {
+    left: 0vw; }
+  100% {
+    left: -20vw; } }
+
+@keyframes memeOpening {
+  0% { }
+  80% {
+    height: 696px;
+    width: 500px;
+    opacity: 0; }
+  100% {
+    height: 696px;
+    width: 500px;
+    opacity: 1; } }
+
+@keyframes pogOpening {
+  0% { }
+  100% {
+    top: 0;
+    left: 0;
+    background-color: #F6E8EA;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0; } }
+
+@keyframes pogClosing {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: #F6E8EA;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0; }
+  100% {
+    height: 1em;
+    width: 1em;
+    top: 1em;
+    left: 2em; } }
