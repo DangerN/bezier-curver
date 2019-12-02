@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/bezier-curver/static/css/main.f29d7aca.chunk.css",
-    "main.js": "/bezier-curver/static/js/main.9c30324c.chunk.js",
-    "main.js.map": "/bezier-curver/static/js/main.9c30324c.chunk.js.map",
+    "main.css": "/bezier-curver/static/css/main.e828902c.chunk.css",
+    "main.js": "/bezier-curver/static/js/main.1062e2c8.chunk.js",
+    "main.js.map": "/bezier-curver/static/js/main.1062e2c8.chunk.js.map",
     "runtime~main.js": "/bezier-curver/static/js/runtime~main.6c026710.js",
     "runtime~main.js.map": "/bezier-curver/static/js/runtime~main.6c026710.js.map",
-    "static/js/2.e908f107.chunk.js": "/bezier-curver/static/js/2.e908f107.chunk.js",
-    "static/js/2.e908f107.chunk.js.map": "/bezier-curver/static/js/2.e908f107.chunk.js.map",
+    "static/js/2.a40ef7bf.chunk.js": "/bezier-curver/static/js/2.a40ef7bf.chunk.js",
+    "static/js/2.a40ef7bf.chunk.js.map": "/bezier-curver/static/js/2.a40ef7bf.chunk.js.map",
     "index.html": "/bezier-curver/index.html",
-    "precache-manifest.0dd3813e586e3d8c7a89d76f4f2d4cff.js": "/bezier-curver/precache-manifest.0dd3813e586e3d8c7a89d76f4f2d4cff.js",
+    "precache-manifest.f158fd04e8c74599574a580d9b324563.js": "/bezier-curver/precache-manifest.f158fd04e8c74599574a580d9b324563.js",
     "service-worker.js": "/bezier-curver/service-worker.js",
-    "static/css/main.f29d7aca.chunk.css.map": "/bezier-curver/static/css/main.f29d7aca.chunk.css.map",
+    "static/css/main.e828902c.chunk.css.map": "/bezier-curver/static/css/main.e828902c.chunk.css.map",
     "static/media/noinfomeme.jpg": "/bezier-curver/static/media/noinfomeme.ac8133af.jpg"
   }
 }

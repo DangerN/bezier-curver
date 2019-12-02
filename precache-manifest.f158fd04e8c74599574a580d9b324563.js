@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f79e19896cdb517166c068019c982edd",
+    "revision": "4d86b958a0fe3ae60300887e141d6b7b",
     "url": "/bezier-curver/index.html"
   },
   {
-    "revision": "f506302557f934571d13",
-    "url": "/bezier-curver/static/css/main.f29d7aca.chunk.css"
+    "revision": "cdaecc9a7e9ff589e35b",
+    "url": "/bezier-curver/static/css/main.e828902c.chunk.css"
   },
   {
-    "revision": "62fe10b52823e11b95d6",
-    "url": "/bezier-curver/static/js/2.e908f107.chunk.js"
+    "revision": "663fdbb34d491b5c64f7",
+    "url": "/bezier-curver/static/js/2.a40ef7bf.chunk.js"
   },
   {
-    "revision": "f506302557f934571d13",
-    "url": "/bezier-curver/static/js/main.9c30324c.chunk.js"
+    "revision": "cdaecc9a7e9ff589e35b",
+    "url": "/bezier-curver/static/js/main.1062e2c8.chunk.js"
   },
   {
     "revision": "4848aba8a51a11eb7467",
