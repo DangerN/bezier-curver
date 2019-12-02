@@ -315,3 +315,11 @@ header {
   cursor: grab;
   cursor: -moz-grab;
   cursor: -webkit-grab; }
+
+.too-small {
+  position: absolute;
+  z-index: 3000;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F6E8EA;
+  padding: 2rem; }

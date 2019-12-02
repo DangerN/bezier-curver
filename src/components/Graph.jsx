@@ -41,12 +41,12 @@ const Graph = (props) => {
   }
   const path = () =>
   {
-    return (`
-      M 25, 275
+    return (
+      `M 25, 275
       C ${graphState.handleOne.x},${graphState.handleOne.y}
         ${graphState.handleTwo.x},${graphState.handleTwo.y}
-        125,175
-    `)
+        125,175`
+    )
   }
   return (
     <svg className='graph'
@@ -59,8 +59,7 @@ const Graph = (props) => {
       <line className='graphBody' x1={graphState.handleOne.x} y1={graphState.handleOne.y} x2='25' y2='275' stroke='black' strokeWidth='2'/>
       <line className='graphBody' x1={graphState.handleTwo.x} y1={graphState.handleTwo.y} x2='125' y2='175' stroke='black' strokeWidth='2'/>
       <path className='curveLine' stroke='red' fill='none'
-      d={path()}
-      />
+      d={path()}/>
       <circle className='anchor' cx='25' cy='275' r='5' fill='red'/>
       <circle className='anchor' cx='125' cy='175' r='5' fill='red'/>
       <circle className='handle' cx={graphState.handleOne.x} cy={graphState.handleOne.y} r='10' fill='hotpink' onMouseDown={()=>{handleMouseDown('handleOne')}}/>
