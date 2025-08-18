@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header'
 import Graph from './components/Graph'
 import Settings from './components/Settings'
 import Instructions from './components/Instructions'
 import Output from './components/Output'
-import useMediaQuery from 'use-media-query-hook'
 import useAppState from './useAppState'
+
+// Custom media query hook to replace the old dependency
+function useMediaQuery(query) {
+    const [matches, setMatches] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia(query);
+        setMatches(mediaQuery.matches);
+
+        const handleChange = (event) => {
+            setMatches(event.matches);
+        };
+
+        mediaQuery.addEventListener('change', handleChange);
+
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange);
+        };
+    }, [query]);
+
+    return matches;
+}
 
 function App() {
   const [appState, dispatch] = useAppState()
