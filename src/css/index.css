@@ -24,56 +24,68 @@ time, mark, audio, video {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 nav ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none; }
+  content: "";
+  content: none;
+}
 
 a {
   margin: 0;
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+}
 
 /* change colours to suit your needs */
 ins {
   background-color: #ff9;
   color: #000;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
   font-style: italic;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 del {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+}
 
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
-  cursor: help; }
+  cursor: help;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 /* change border colour to suit your needs */
 hr {
@@ -82,10 +94,12 @@ hr {
   border: 0;
   border-top: 1px solid #cccccc;
   margin: 1em 0;
-  padding: 0; }
+  padding: 0;
+}
 
 input, select {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .output {
   grid-area: output;
@@ -94,7 +108,8 @@ input, select {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+}
 
 .box {
   height: 30px;
@@ -104,69 +119,85 @@ input, select {
   animation-name: boxAn;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  position: relative; }
+  position: relative;
+}
 
 @keyframes boxAn {
   0% {
-    left: 0px; }
+    left: 0px;
+  }
   100% {
-    left: 100px; } }
-
+    left: 100px;
+  }
+}
 #circle {
   animation-name: circleResize;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
-  #circle > circle {
-    fill: #CFF27E;
-    stroke: #FF9042; }
+  animation-direction: alternate;
+}
+#circle > circle {
+  fill: #CFF27E;
+  stroke: #FF9042;
+}
 
 @keyframes circleResize {
   0% {
-    height: 20px; }
+    height: 20px;
+  }
   100% {
-    height: 40px; } }
-
+    height: 40px;
+  }
+}
 #cross {
   height: 30px;
   width: 30px;
   animation-name: crossSpin;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+}
 
 @keyframes crossSpin {
   0% {
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   100% {
-    transform: rotate(360deg); } }
-
+    transform: rotate(360deg);
+  }
+}
 #ghostBox {
   height: 30px;
   width: 30px;
   background: #FF9042;
   animation-name: ghostBox;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+}
 
 @keyframes ghostBox {
   0% {
-    opacity: 0.2; }
+    opacity: 0.2;
+  }
   100% {
-    opacity: 0.7; } }
-
+    opacity: 0.7;
+  }
+}
 #colorBox {
   height: 30px;
   width: 30px;
   animation-name: colorBox;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-color: #FF9042; }
+  background-color: #FF9042;
+}
 
 @keyframes colorBox {
   0% {
-    background-color: #FF9042; }
+    background-color: #FF9042;
+  }
   100% {
-    background-color: #330036; } }
-
+    background-color: #330036;
+  }
+}
 #pog {
   background-color: #F6E8EA;
   border-radius: 50em;
@@ -179,67 +210,79 @@ input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50; }
+  z-index: 50;
+}
 
 #infocon {
   font-size: 1em;
   transition: all 0.5s ease;
   cursor: pointer;
   position: relative;
-  animation: infoconClosing 0.5s forwards; }
+  animation: infoconClosing 0.5s forwards;
+}
 
 #meme {
   height: 0;
   width: 0;
   animation: memeClosing 0.5s forwards;
   opacity: 0;
-  border-radius: 1em; }
+  border-radius: 1em;
+}
 
 .infoClosed {
-  transition: all 0.5s ease; }
-  .infoClosed > #pog {
-    animation: pogClosing 0.5s forwards; }
-
+  transition: all 0.5s ease;
+}
+.infoClosed > #pog {
+  animation: pogClosing 0.5s forwards;
+}
 .infoOpen > #pog {
-  animation: pogOpening 0.5s forwards; }
-  .infoOpen > #pog > #infocon {
-    animation: infoconOpening 0.5s forwards; }
-  .infoOpen > #pog > #meme {
-    animation: memeOpening 0.5s forwards; }
+  animation: pogOpening 0.5s forwards;
+}
+.infoOpen > #pog > #infocon {
+  animation: infoconOpening 0.5s forwards;
+}
+.infoOpen > #pog > #meme {
+  animation: memeOpening 0.5s forwards;
+}
 
 @keyframes infoconClosing {
   0% {
-    left: -20vw; }
+    left: -20vw;
+  }
   100% {
-    left: 0vw; } }
-
+    left: 0vw;
+  }
+}
 @keyframes infoconOpening {
   0% {
-    left: 0vw; }
+    left: 0vw;
+  }
   100% {
-    left: -20vw; } }
-
+    left: -20vw;
+  }
+}
 @keyframes memeOpening {
-  0% { }
   80% {
     height: 696px;
     width: 500px;
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
     height: 696px;
     width: 500px;
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 @keyframes pogOpening {
-  0% { }
   100% {
     top: 0;
     left: 0;
     background-color: #F6E8EA;
     width: 100vw;
     height: 100vh;
-    border-radius: 0; } }
-
+    border-radius: 0;
+  }
+}
 @keyframes pogClosing {
   0% {
     top: 0;
@@ -247,22 +290,26 @@ input, select {
     background-color: #F6E8EA;
     width: 100vw;
     height: 100vh;
-    border-radius: 0; }
+    border-radius: 0;
+  }
   100% {
     height: 1em;
     width: 1em;
     top: 1em;
-    left: 2em; } }
-
+    left: 2em;
+  }
+}
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html, body, #root {
   height: 100%;
   width: 100%;
   background: #F6E8EA;
-  font-family: 'Roboto', sans-serif;
-  color: #330036; }
+  font-family: "Roboto", sans-serif;
+  color: #330036;
+}
 
 .App {
   height: 100%;
@@ -272,40 +319,140 @@ html, body, #root {
   grid-template-rows: 10% 35% 15% 40%;
   grid-template-columns: 0.8fr 1fr 1fr;
   align-items: center;
-  justify-items: center; }
+  justify-items: center;
+}
 
 header {
   display: flex;
   flex-flow: row;
   justify-content: center;
   grid-area: header;
-  font-size: 2em; }
+  font-size: 2em;
+}
 
 .instructions {
   padding-right: 2em;
   grid-area: instructions;
   display: flex;
-  flex-flow: column; }
-  .instructions > * {
-    margin: 1em; }
+  flex-flow: column;
+}
+.instructions > * {
+  margin: 1em;
+}
 
 .graph {
   grid-area: graph;
-  height: 100%; }
+  height: 100%;
+}
 
 .anchor {
-  fill: #FF9042; }
+  fill: #FF9042;
+}
 
 .graphBody {
-  stroke: #330036; }
+  stroke: #330036;
+}
 
 .curveLine {
   fill: #CFF27E;
   stroke: #FF9042;
-  stroke-width: 2; }
+  stroke-width: 2;
+}
 
 .controls {
-  grid-area: controls; }
+  grid-area: controls;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.speedSlider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.speedSlider input[type=range] {
+  width: 200px;
+}
+
+.bezierInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.inputGroup > label {
+  font-weight: bold;
+  color: #330036;
+  min-width: 70px;
+}
+
+.inputPair {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.inputField label {
+  font-size: 0.9rem;
+  color: #330036;
+  min-width: 12px;
+}
+.inputField input[type=number] {
+  width: 60px;
+  padding: 0.4rem;
+  border: 2px solid #330036;
+  border-radius: 4px;
+  background-color: #F6E8EA;
+  color: #330036;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.inputField input[type=number]:focus {
+  outline: none;
+  border-color: #FF9042;
+  background-color: rgba(207, 242, 126, 0.1);
+}
+
+.resetButton {
+  padding: 0.6rem 1.2rem;
+  background-color: #FF9042;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  z-index: 10;
+  position: relative;
+}
+.resetButton:hover {
+  background-color: rgb(255, 114.0476190476, 15);
+  transform: translateY(-1px);
+}
+.resetButton:active {
+  transform: translateY(0);
+}
 
 .handle {
   fill: #CFF27E;
@@ -314,7 +461,8 @@ header {
   cursor: move;
   cursor: grab;
   cursor: -moz-grab;
-  cursor: -webkit-grab; }
+  cursor: -webkit-grab;
+}
 
 .too-small {
   position: absolute;
@@ -322,4 +470,7 @@ header {
   height: 100vh;
   width: 100vw;
   background-color: #F6E8EA;
-  padding: 2rem; }
+  padding: 2rem;
+}
+
+/*# sourceMappingURL=index.css.map */

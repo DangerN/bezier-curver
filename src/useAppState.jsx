@@ -19,6 +19,16 @@ function useAppState() {
           x: ((action.x-25)/100).toFixed(2),
           y: ((-(action.y-275))/100).toFixed(2)
         }}
+      case 'setHandleValue':
+        return {...state, [action.handle]: {
+          ...state[action.handle],
+          [action.coordinate]: parseFloat(action.value).toFixed(2)
+        }}
+      case 'resetHandles':
+        return {...state, 
+          handleOne: {x: 0.25, y: 0.25},
+          handleTwo: {x: 0.75, y: 0.75}
+        }
       case 'changeAnimationSpeed':
         return {...state, animationSpeed: action.speed}
       case 'toggleInfo':

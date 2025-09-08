@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Header infoOpen={appState.infoOpen} dispatch={dispatch}/>
-      <Graph dispatch={dispatch} multiplier={appState.multiplier}/>
+      <Graph dispatch={dispatch} handleOne={appState.handleOne} handleTwo={appState.handleTwo}/>
       <Settings dispatch={dispatch} {...appState}/>
       <Instructions {...appState}/>
       <Output {...appState}/>

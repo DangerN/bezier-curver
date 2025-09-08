@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import clamp from 'lodash.clamp'
 
 const Graph = (props) => {
@@ -15,6 +15,21 @@ const Graph = (props) => {
     draggingPointId: null
   }
   const [ graphState, setGraphState ] = useState(initialState)
+
+  // Update graph state when props change (from inputs)
+  useEffect(() => {
+    setGraphState(prevState => ({
+      ...prevState,
+      handleOne: {
+        x: handleOne.x*100+25,
+        y: ((-(handleOne.y*100))+275)
+      },
+      handleTwo: {
+        x: handleTwo.x*100+25,
+        y: ((-(handleTwo.y*100))+275)
+      }
+    }))
+  }, [handleOne.x, handleOne.y, handleTwo.x, handleTwo.y])
   const handleMouseDown = (pointId) => {
     setGraphState({...graphState, draggingPointId: pointId})
   }
