@@ -5,75 +5,95 @@
   display: flex;
   flex-flow: row;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+}
 
 .box {
   height: 30px;
   width: 30px;
-  background-color: #FF9042;
+  background-color: #15F5BA;
   animation-duration: 2s;
   animation-name: boxAn;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  position: relative; }
+  position: relative;
+}
 
 @keyframes boxAn {
   0% {
-    left: 0px; }
+    left: 0px;
+  }
   100% {
-    left: 100px; } }
-
+    left: 100px;
+  }
+}
 #circle {
   animation-name: circleResize;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
-  #circle > circle {
-    fill: #CFF27E;
-    stroke: #FF9042; }
+  animation-direction: alternate;
+}
+#circle > circle {
+  fill: #836FFF;
+  stroke: #15F5BA;
+}
 
 @keyframes circleResize {
   0% {
-    height: 20px; }
+    height: 20px;
+  }
   100% {
-    height: 40px; } }
-
+    height: 40px;
+  }
+}
 #cross {
   height: 30px;
   width: 30px;
   animation-name: crossSpin;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+}
 
 @keyframes crossSpin {
   0% {
-    transform: rotate(0deg); }
+    transform: rotate(0deg);
+  }
   100% {
-    transform: rotate(360deg); } }
-
+    transform: rotate(360deg);
+  }
+}
 #ghostBox {
   height: 30px;
   width: 30px;
-  background: #FF9042;
+  background: #15F5BA;
   animation-name: ghostBox;
   animation-iteration-count: infinite;
-  animation-direction: alternate; }
+  animation-direction: alternate;
+}
 
 @keyframes ghostBox {
   0% {
-    opacity: 0.2; }
+    opacity: 0.2;
+  }
   100% {
-    opacity: 0.7; } }
-
+    opacity: 0.7;
+  }
+}
 #colorBox {
   height: 30px;
   width: 30px;
   animation-name: colorBox;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-color: #FF9042; }
+  background-color: #15F5BA;
+}
 
 @keyframes colorBox {
   0% {
-    background-color: #FF9042; }
+    background-color: #15F5BA;
+  }
   100% {
-    background-color: #330036; } }
+    background-color: #F0F3FF;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */

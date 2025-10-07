@@ -185,3 +185,98 @@ header {
   background-color: map-get($colors, 'primary');
   padding: 2rem
 }
+
+/* Themed range input for elements with the 'speedSlider' class */
+.speedSlider input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 18px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.speedSlider input[type='range']:focus {
+  outline: none;
+}
+
+/* WebKit (Chrome, Safari, Edge Chromium) */
+.speedSlider input[type='range']::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    map-get($colors, 'secondary'),
+    map-get($colors, 'tertiary')
+  );
+  border-radius: 4px;
+}
+
+.speedSlider input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px; /* centers thumb on track */
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: map-get($colors, 'tertiary');
+  border: 2px solid map-get($colors, 'secondary');
+  transition: box-shadow 0.2s ease;
+}
+
+.speedSlider input[type='range']:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(map-get($colors, 'secondary'), 0.25);
+}
+
+/* Firefox */
+.speedSlider input[type='range']::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    map-get($colors, 'secondary'),
+    map-get($colors, 'tertiary')
+  );
+  border-radius: 4px;
+}
+
+.speedSlider input[type='range']::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: map-get($colors, 'tertiary');
+  border: 2px solid map-get($colors, 'secondary');
+  transition: box-shadow 0.2s ease;
+}
+
+.speedSlider input[type='range']:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(map-get($colors, 'secondary'), 0.25);
+}
+
+/* Legacy Edge/IE */
+.speedSlider input[type='range']::-ms-track {
+  height: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.speedSlider input[type='range']::-ms-fill-lower {
+  background: map-get($colors, 'secondary');
+  border-radius: 4px;
+}
+
+.speedSlider input[type='range']::-ms-fill-upper {
+  background: map-get($colors, 'tertiary');
+  border-radius: 4px;
+}
+
+.speedSlider input[type='range']::-ms-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: map-get($colors, 'tertiary');
+  border: 2px solid map-get($colors, 'secondary');
+}
+
+button.resetButton {
+  color: map-get($colors, 'primary')
+}

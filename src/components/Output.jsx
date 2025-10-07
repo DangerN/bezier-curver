@@ -23,9 +23,9 @@ const Output = props => {
         viewBox={'0 0 10 10'}
         id='cross'
         style={animation}>
-        <line fill='green' stroke='purple' strokeWidth='4' x1='0' y1='5' x2='10' y2='5' />
-        <line fill='green' stroke='purple' strokeWidth='4' x1='5' y1='0' x2='5' y2='10' />
-        <circle cx='5' cy='2' r='1' fill='white' />
+        <line fill='green' stroke='#15F5BA' strokeWidth='4' x1='0' y1='5' x2='10' y2='5' />
+        <line fill='green' stroke='#15F5BA' strokeWidth='4' x1='5' y1='0' x2='5' y2='10' />
+        <circle cx='5' cy='2' r='1' fill='#836FFF' />
       </svg>
       <div
         id='ghostBox'

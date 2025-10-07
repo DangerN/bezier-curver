@@ -114,7 +114,7 @@ input, select {
 .box {
   height: 30px;
   width: 30px;
-  background-color: #FF9042;
+  background-color: #15F5BA;
   animation-duration: 2s;
   animation-name: boxAn;
   animation-iteration-count: infinite;
@@ -136,8 +136,8 @@ input, select {
   animation-direction: alternate;
 }
 #circle > circle {
-  fill: #CFF27E;
-  stroke: #FF9042;
+  fill: #836FFF;
+  stroke: #15F5BA;
 }
 
 @keyframes circleResize {
@@ -167,7 +167,7 @@ input, select {
 #ghostBox {
   height: 30px;
   width: 30px;
-  background: #FF9042;
+  background: #15F5BA;
   animation-name: ghostBox;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -187,19 +187,19 @@ input, select {
   animation-name: colorBox;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-color: #FF9042;
+  background-color: #15F5BA;
 }
 
 @keyframes colorBox {
   0% {
-    background-color: #FF9042;
+    background-color: #15F5BA;
   }
   100% {
-    background-color: #330036;
+    background-color: #F0F3FF;
   }
 }
 #pog {
-  background-color: #F6E8EA;
+  background-color: #211951;
   border-radius: 50em;
   transition: all 1s ease;
   height: 1em;
@@ -277,7 +277,7 @@ input, select {
   100% {
     top: 0;
     left: 0;
-    background-color: #F6E8EA;
+    background-color: #211951;
     width: 100vw;
     height: 100vh;
     border-radius: 0;
@@ -287,7 +287,7 @@ input, select {
   0% {
     top: 0;
     left: 0;
-    background-color: #F6E8EA;
+    background-color: #211951;
     width: 100vw;
     height: 100vh;
     border-radius: 0;
@@ -306,9 +306,9 @@ input, select {
 html, body, #root {
   height: 100%;
   width: 100%;
-  background: #F6E8EA;
+  background: #211951;
   font-family: "Roboto", sans-serif;
-  color: #330036;
+  color: #F0F3FF;
 }
 
 .App {
@@ -346,16 +346,16 @@ header {
 }
 
 .anchor {
-  fill: #FF9042;
+  fill: #15F5BA;
 }
 
 .graphBody {
-  stroke: #330036;
+  stroke: #F0F3FF;
 }
 
 .curveLine {
-  fill: #CFF27E;
-  stroke: #FF9042;
+  fill: #836FFF;
+  stroke: #15F5BA;
   stroke-width: 2;
 }
 
@@ -396,7 +396,7 @@ header {
 }
 .inputGroup > label {
   font-weight: bold;
-  color: #330036;
+  color: #F0F3FF;
   min-width: 70px;
 }
 
@@ -413,28 +413,28 @@ header {
 }
 .inputField label {
   font-size: 0.9rem;
-  color: #330036;
+  color: #F0F3FF;
   min-width: 12px;
 }
 .inputField input[type=number] {
   width: 60px;
   padding: 0.4rem;
-  border: 2px solid #330036;
+  border: 2px solid #F0F3FF;
   border-radius: 4px;
-  background-color: #F6E8EA;
-  color: #330036;
+  background-color: #211951;
+  color: #F0F3FF;
   font-size: 0.9rem;
   text-align: center;
 }
 .inputField input[type=number]:focus {
   outline: none;
-  border-color: #FF9042;
-  background-color: rgba(207, 242, 126, 0.1);
+  border-color: #15F5BA;
+  background-color: rgba(131, 111, 255, 0.1);
 }
 
 .resetButton {
   padding: 0.6rem 1.2rem;
-  background-color: #FF9042;
+  background-color: #15F5BA;
   color: white;
   border: none;
   border-radius: 4px;
@@ -447,7 +447,7 @@ header {
   position: relative;
 }
 .resetButton:hover {
-  background-color: rgb(255, 114.0476190476, 15);
+  background-color: rgb(8.8114754098, 206.1885245902, 154.2008196721);
   transform: translateY(-1px);
 }
 .resetButton:active {
@@ -455,8 +455,8 @@ header {
 }
 
 .handle {
-  fill: #CFF27E;
-  stroke: #FF9042;
+  fill: #836FFF;
+  stroke: #15F5BA;
   stroke-width: 2;
   cursor: move;
   cursor: grab;
@@ -469,8 +469,95 @@ header {
   z-index: 3000;
   height: 100vh;
   width: 100vw;
-  background-color: #F6E8EA;
+  background-color: #211951;
   padding: 2rem;
+}
+
+/* Themed range input for elements with the 'speedSlider' class */
+.speedSlider input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 18px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.speedSlider input[type=range]:focus {
+  outline: none;
+}
+
+/* WebKit (Chrome, Safari, Edge Chromium) */
+.speedSlider input[type=range]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(to right, #836FFF, #15F5BA);
+  border-radius: 4px;
+}
+
+.speedSlider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px; /* centers thumb on track */
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #15F5BA;
+  border: 2px solid #836FFF;
+  transition: box-shadow 0.2s ease;
+}
+
+.speedSlider input[type=range]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(131, 111, 255, 0.25);
+}
+
+/* Firefox */
+.speedSlider input[type=range]::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(to right, #836FFF, #15F5BA);
+  border-radius: 4px;
+}
+
+.speedSlider input[type=range]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #15F5BA;
+  border: 2px solid #836FFF;
+  transition: box-shadow 0.2s ease;
+}
+
+.speedSlider input[type=range]:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(131, 111, 255, 0.25);
+}
+
+/* Legacy Edge/IE */
+.speedSlider input[type=range]::-ms-track {
+  height: 8px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.speedSlider input[type=range]::-ms-fill-lower {
+  background: #836FFF;
+  border-radius: 4px;
+}
+
+.speedSlider input[type=range]::-ms-fill-upper {
+  background: #15F5BA;
+  border-radius: 4px;
+}
+
+.speedSlider input[type=range]::-ms-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #15F5BA;
+  border: 2px solid #836FFF;
+}
+
+button.resetButton {
+  color: #211951;
 }
 
 /*# sourceMappingURL=index.css.map */
