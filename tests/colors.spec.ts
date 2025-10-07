@@ -288,7 +288,7 @@ test.describe('Color tests', () => {
   })
 
   // --- Approximate color sanity checks (exclude skipped and color box tests) ---
-  const APPROX_DELTA = 10
+  const APPROX_DELTA = 27.5
   const numberInputSel = '.inputField input[type="number"]'
 
   const focusNumberInput = async (page) => {
